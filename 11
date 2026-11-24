@@ -1,0 +1,75 @@
+.yml->
+# TODO 1: Specify the Maven Docker image with a compatible JDK.
+image: maven:3.10.2-eclipse-temurin-25
+
+# TODO 2: Declare build and test stages in the correct order.
+stages:
+  - build
+  - test
+
+# TODO 3: Configure the build job.
+build_job:
+  stage: build
+  script:
+    # TODO 4: Add the Maven command to compile the project without running tests.
+    - mvn clean compile
+
+# TODO 5: Configure the test job.
+test_job:
+  stage: test
+  script:
+    # TODO 6: Add the Maven command to execute JUnit tests.
+    - mvn test
+
+Jenkinsfile->
+// Jenkins Pipeline starter - complete the TODO sections.
+pipeline {
+    // TODO 1: Select an appropriate agent.
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                // TODO 2: Add the build/compile action for the supplied project.
+                bat 'mvn clean compile'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                // TODO 3: Add the test execution action.
+                bat 'mvn test'
+            }
+        }
+
+        stage('Post Build') {
+            steps {
+                // TODO 4: Display a suitable completion message.
+                echo 'Build and testing completed successfully!'
+            }
+        }
+    }
+}
+
+test.java
+package com.example;
+
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+class MessageServiceTest {
+    private final MessageService service = new MessageService();
+
+    @Test
+    void shouldReturnWelcomeMessage() {
+        assertEquals("Welcome to the DevOps practical examination", service.getMessage());
+             /********** add your assertion to test for service.getMessage() *****/
+             assertNotNull(service.getMessage());
+    }
+
+    @Test
+    void shouldCalculateTotal() {
+      int result = service.calculateTotal(10, 20);
+    assertEquals(30, result);
+    }
+}
