@@ -1,0 +1,49 @@
+# 1. Check project files
+ls
+
+# 2. Initialize local Git repository
+git init
+
+# 3. Configure Git username and email
+git config --global user.name "Your Name"
+git config --global user.email "your-email@gmail.com"
+
+# 4. Stage project files
+git add .
+
+# 5. Commit project files
+git commit -m "Initial commit - College Website"
+
+# 6. Create a GitHub repository manually
+# Go to https://github.com
+# Click New Repository
+# Repository name: CollegeWebsite
+# Select Public
+# Click Create Repository
+
+# 7. Connect local repository to GitHub
+git branch -M main
+git remote add origin https://github.com/YOUR-USERNAME/CollegeWebsite.git
+
+# 8. Verify remote repository
+git remote -v
+
+# 9. Push project files to GitHub
+git push -u origin main
+
+# 10. Modify any existing project file and save it
+
+# 11. Stage updated files
+git add .
+
+# 12. Commit updates
+git commit -m "Updated College Website"
+
+# 13. Push subsequent updates
+git push origin main
+
+# 14. Verify latest commit
+git log --oneline
+
+# 15. Check final status
+git status
