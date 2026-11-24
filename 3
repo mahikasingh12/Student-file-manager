@@ -1,0 +1,46 @@
+# 1. Clone examiner-provided GitHub repository
+git clone https://github.com/USERNAME/REPOSITORY-NAME.git
+
+# 2. Navigate into cloned project
+cd REPOSITORY-NAME
+
+# 3. Examine project files
+ls
+
+# 4. Check repository status
+git status
+
+# 5. View existing commit history
+git log --oneline
+
+# 6. Modify an existing file and save it
+
+# 7. Create a new file (example)
+New-Item -ItemType File -Name "newfile.txt"
+
+# 8. Add content to the new file (optional)
+Set-Content newfile.txt "This is a newly created file."
+
+# 9. Check modified and new files
+git status
+
+# 10. Stage all changes
+git add .
+
+# 11. Verify staged changes
+git status
+
+# 12. Commit changes
+git commit -m "Modified existing files and added new file"
+
+# 13. View commit details
+git show
+
+# 14. Push updates to GitHub
+git push origin main
+
+# 15. View updated commit history
+git log --oneline
+
+# 16. Check final repository status
+git status
