@@ -1,0 +1,59 @@
+bat file 
+@echo off
+
+echo ====================================
+echo       JENKINS FREESTYLE BUILD
+echo ====================================
+
+REM TODO 1: Display a welcome message with project name
+echo Welcome to Jenkins Freestyle Build Project
+
+echo Build Started Successfully
+
+REM TODO 2: Display current date and time
+echo Current Date and Time:
+echo %date% %time%
+
+REM TODO 3: Display logged-in username
+echo Logged-in Username:
+echo %username%
+
+REM TODO 4: Display operating system information
+echo Operating System Information:
+ver
+
+REM TODO 5: Display current working directory
+echo Current Working Directory:
+cd
+
+REM Create output directory
+if not exist output mkdir output
+
+echo Output directory created
+
+REM Create system-info.txt
+echo Operating System: > output\system-info.txt
+ver >> output\system-info.txt
+echo Username: %username% >> output\system-info.txt
+echo Current Directory: >> output\system-info.txt
+cd >> output\system-info.txt
+echo Date and Time: %date% %time% >> output\system-info.txt
+
+REM TODO 6: Create build-report.txt inside output
+REM Include Project Name, Build Date and Build Status
+echo Project Name: Jenkins Freestyle Build > output\build-report.txt
+echo Build Date: %date% %time% >> output\build-report.txt
+echo Build Status: SUCCESS >> output\build-report.txt
+
+REM TODO 7: Display the contents of build-report.txt
+echo.
+echo ===== BUILD REPORT =====
+type output\build-report.txt
+
+
+
+echo ====================================
+echo       BUILD COMPLETED
+echo ====================================
+
+exit /b 0
