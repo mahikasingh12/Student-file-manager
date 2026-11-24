@@ -1,1 +1,94 @@
 **/target/surefire-reports/TEST-*.xml in Post build Action
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+public class CalculatorTest {
+
+    private Calculator calculator;
+
+    @BeforeEach
+    public void setUp() {
+
+        // TODO 1: Create an object of Calculator class
+        calculator=new Calculator();
+
+    }
+
+    @Test
+    public void testAddition() {
+
+        // TODO 2: Call add() with two numbers
+        int result=calculator.add(10, 5);
+
+        // TODO 3: Verify result using assertEquals()
+        assertEquals(15,result);
+
+    }
+
+    @Test
+    public void testSubtraction() {
+
+        // TODO 4: Call subtract() with two numbers
+        int result=calculator.subtract(20,5);
+
+        // TODO 5: Verify expected result
+        assertEquals(15,result);
+
+    }
+
+    @Test
+    public void testMultiplication() {
+
+        // TODO 6: Call multiply() with two numbers
+        int result = calculator.multiply(10, 5);
+
+        // TODO 7: Verify expected result
+        assertEquals(50, result);
+
+    }
+
+    @Test
+    public void testDivision() {
+
+        // TODO 8: Call divide() with two non-zero numbers
+        double result = calculator.divide(10, 5);
+
+        // TODO 9: Verify expected result using assertEquals()
+        // Use a delta for double values
+        assertEquals(2.0, result, 0.001);
+
+    }
+
+    @Test
+    public void testDivisionByZero() {
+
+        // TODO 10: Verify IllegalArgumentException
+        // Hint: Use assertThrows()
+        assertThrows(IllegalArgumentException.class,
+                () -> calculator.divide(10, 0));
+
+    }
+
+    @Test
+    public void testAdditionWithNegativeNumbers() {
+
+        // TODO 11: Test addition with negative numbers
+        int result = calculator.add(-10, -5);
+
+        // TODO 12: Verify expected result
+        assertEquals(-15, result);
+
+    }
+
+    @Test
+    public void testMultiplicationByZero() {
+        int result = calculator.multiply(10, 0);
+        // TODO 13: Verify multiplication by zero
+        assertEquals(0,result);
+
+    }
+
+}
