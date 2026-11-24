@@ -1,0 +1,74 @@
+# 1. Initialize Git repository
+git init
+
+# 2. Configure Git
+git config --global user.name "Your Name"
+git config --global user.email "your-email@gmail.com"
+
+# 3. Create a file
+Set-Content index.html "Welcome to the Main Branch"
+
+# 4. Stage and commit initial file
+git add .
+git commit -m "Initial commit"
+
+# 5. Create feature branch
+git branch feature
+
+# 6. Switch to feature branch
+git checkout feature
+
+# 7. Modify the same file in feature branch
+Set-Content index.html "Welcome to the Feature Branch"
+
+# 8. Stage and commit feature changes
+git add .
+git commit -m "Updated file in feature branch"
+
+# 9. Switch back to main branch
+git checkout main
+
+# 10. Modify the same file differently
+Set-Content index.html "Welcome to the Main Project"
+
+# 11. Stage and commit main branch changes
+git add .
+git commit -m "Updated file in main branch"
+
+# 12. Merge feature branch
+git merge feature
+
+At Step 12, Git should display a merge conflict.
+Resolve the conflict
+Open index.html in VS Code. You will see conflict markers similar to:
+<<<<<<< HEAD
+Welcome to the Main Project
+=======
+Welcome to the Feature Branch
+>>>>>>> feature
+
+Manually replace the entire content with
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Welcome to the Library Management Project</h1>
+</body>
+</html>
+
+# 13. Check resolved file status
+git status
+
+# 14. Stage resolved file
+git add index.html
+
+# 15. Complete merge
+git commit -m "Resolved merge conflict"
+
+# 16. Verify merge result
+git status
+
+# 17. View final commit history
+git log --oneline --graph --all
+
+# 18. View merge commit details
+git show
