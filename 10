@@ -1,0 +1,18 @@
+
+# TODO 1: Declare the pipeline stage(s).
+stages:
+  - build
+
+# TODO 2: Define a job named build_job.
+# TODO 3: Assign the job to the correct stage.
+build_job:
+  stage: build
+
+  script:
+    - echo "Starting sample build"
+
+    # TODO 4: Display the project files.
+    - ls -la
+
+    # TODO 5: Display a build completion message.
+    - echo "Build completed successfully!"
